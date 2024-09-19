@@ -1,7 +1,7 @@
 To use: 
 Clone the repo, cd into in from terminal,
 run pip3 install -r requirements.txt
-python3 run.py
+./run.sh
 
 
 
