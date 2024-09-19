@@ -10,7 +10,6 @@ from pymobiledevice3.lockdown import create_using_usbmux
 from pathlib import Path
 import plistlib
 import traceback
-import os
 
 running = True
 passed_check = False
@@ -52,6 +51,7 @@ while running:
     print("CLI v2.2")
     print("by LeminLimez")
     print("Thanks @disfordottie for the clock animation and @lrdsnow for EU Enabler\n")
+    print("Please back up your device before using!")
 
     while device == None:
         connected_devices = usbmux.list_devices()
@@ -67,12 +67,8 @@ while running:
                     input("Press Enter to continue...")
         
         if device == None:
-            print("Please connect your device and try again!")            
-            os.system("sleep 1")            
-            print ("Press Enter to rerun...")
-            os.system("read")
-            os.system("python3 cli_app.py")
-
+            print("Please connect your device and try again!")
+            input("Press Enter to continue...")
 
     print(f"Connected to {device.name}\niOS {device.version}\n")
     
