@@ -85,25 +85,6 @@ def cli(ctx, service_provider: LockdownClient) -> None:
                 inode=0,
             ),
 
-            # MobileGestalt
-            # Get your own and modify it!
-            # - You need to add 'DeviceSupportsGenerativeModelSystems' (boolean: YES).
-            # - Change ProductType to "16,2" or newer for stage 1; wait for models to download, then change it back to what it was.
-            # Do NOT remove the first key, as that is required for SAE to work.
-            backup.Directory(
-                "",
-                f"SysContainerDomain-../../../../../../../../var/containers/Shared/SystemGroup/systemgroup.com.apple.mobilegestaltcache/Library/Caches",
-                owner=33,
-                group=33,
-            ),
-            backup.ConcreteFile(
-                "",
-                f"SysContainerDomain-../../../../../../../../var/containers/Shared/SystemGroup/systemgroup.com.apple.mobilegestaltcache/Library/Caches/com.apple.MobileGestalt.plist",
-                owner=33,
-                group=33,
-                contents=open("xezrunner/com.apple.MobileGestalt.plist", "rb").read(),
-            ),
-
             # backup.ConcreteFile(
             #     "",
             #     "SysContainerDomain-../../../../../../../../var/.backup.i/var/root/Library/Preferences/temp",
