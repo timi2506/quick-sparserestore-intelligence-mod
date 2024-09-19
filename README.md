@@ -1,3 +1,15 @@
+To use: 
+Clone the repo, cd into in from terminal,
+run pip3 install -r requirements.txt
+python3 run.py
+
+
+
+
+
+
+
+
 # Quick sparserestore exploit script 
 ### based on [TrollRestore](https://github.com/JJTech0130/TrollRestore)
 
