@@ -1,3 +1,4 @@
+import os
 import platform
 import sys
 import traceback
@@ -122,7 +123,8 @@ def main():
     except NoDeviceConnectedError:
         click.secho("No device connected!", fg="red")
         click.secho("Please connect your device and try again.", fg="red")
-        exit(1)
+        os.system("chmod +x rerun.sh")
+        os.system("bash rerun.sh")
     except click.UsageError as e:
         click.secho(e.format_message(), fg="red")
         click.echo(cli.get_help(click.Context(cli)))
@@ -132,7 +134,7 @@ def main():
         click.secho(traceback.format_exc(), fg="red")
         exit(1)
 
-    exit(0)
+    quit()
 
 
 if __name__ == "__main__":
